@@ -11,7 +11,7 @@ delivery format for base operating system updates.
 
 ## More information
 
-See: <https://bootc-org.gitlab.io/documentation/>
+Documentation: <https://docs-bootc-org-fedora-bootc-6570d042ee03afe91a435802a9746be5039.gitlab.io/fedora-bootc/>
 
 ## Badges
 
