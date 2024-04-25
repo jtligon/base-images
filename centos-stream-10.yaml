@@ -1,6 +1,0 @@
-releasever: stream10
-variables:
-  distro: "stream10"
-
-include:
-  - centos-stream-common.yaml
