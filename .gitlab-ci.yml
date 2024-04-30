@@ -7,7 +7,8 @@ variables:
   # Default this one
   RUNNER: saas-linux-medium-amd64
   ARM_RUNNER: tmp-gcp-bifrost-aarch64
-  ARCHES: "amd64 arm64"
+  # TODO add arm64 once we have a runner
+  ARCHES: "amd64"
   BUILDAH_IMAGE: quay.io/buildah/stable:v1.34.0
   BUILDAH_ARGS: "--security-opt=label=disable --cap-add=all"
 
@@ -36,6 +37,9 @@ ci-build-image-arm64:
   extends: .build-image-mr
   tags:
     - $ARM_RUNNER
+  # See above re runner
+  rules:
+    - when: never
 
 ci-build-image-amd64:
   variables:
