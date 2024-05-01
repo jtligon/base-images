@@ -13,6 +13,7 @@ include:
   - fwupd.yaml
   - persistent-journal.yaml
   - initramfs-full.yaml
+  - generic-growfs.yaml
 
 packages:
   # Include and set the default editor
