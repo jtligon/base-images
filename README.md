@@ -19,11 +19,11 @@ other application image (note that building with `docker` is not currently
 supported). You need to enable some privileges for technical reasons.
 
 ```
-podman build --security-opt=label=disable --cap-add=all --device /dev/fuse \
-  -t localhost/fedora-bootc:40 -f Containerfile.fedora-40
+podman build --security-opt=label=disable --cap-add=all \
+  --device /dev/fuse -t localhost/fedora-bootc .
 ```
 
-See `Containerfile.fedora-40` for more details.
+See the `Containerfile` for more details.
 
 You are of course also free to fork, customize, and build base images yourself.
 See this page[6] of the documentation for more information.
