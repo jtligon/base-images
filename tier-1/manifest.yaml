@@ -9,7 +9,7 @@ include:
   - firmware.yaml
   - networking-tools.yaml
   - system-configuration.yaml
-  - user-experience.yaml
+  - coreos-user-experience.yaml
   - fwupd.yaml
   - persistent-journal.yaml
   - initramfs-full.yaml
@@ -44,6 +44,8 @@ packages:
   - zram-generator
   # resolved was broken out to its own package in rawhide/f35
   - systemd-resolved
+  # This one is in Python so isn't in FCOS, but we can safely add it here.
+  - sos
 
 # These are random architecture-specific packages
 packages-x86_64:
