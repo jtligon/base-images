@@ -56,6 +56,8 @@ include:
   - basic-fixes.yaml
 
 packages:
+  # needed for building derived container images
+  - dnf
   # Even in tier-0, we have this.  If you don't want SELinux today, you'll need
   # to build a custom image.
   - selinux-policy-targeted
