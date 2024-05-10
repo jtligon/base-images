@@ -1,0 +1,14 @@
+releasever: rawhide
+variables:
+  distro: "fedora"
+
+repos:
+  - rawhide
+
+metadata:
+  name: fedora-boot-tier1
+  summary: Fedora Bootable Tier 1
+
+include:
+  - tier-1/manifest.yaml
+  - tier-1/kernel.yaml
