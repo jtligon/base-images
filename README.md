@@ -30,7 +30,7 @@ See this page[6] of the documentation for more information.
 
 ## More information
 
-Documentation: <https://docs-bootc-org-fedora-bootc-6570d042ee03afe91a435802a9746be5039.gitlab.io/fedora-bootc/>
+Documentation: <https://docs.fedoraproject.org/en-US/bootc/>
 
 ## Badges
 
@@ -43,5 +43,5 @@ Documentation: <https://docs-bootc-org-fedora-bootc-6570d042ee03afe91a435802a974
 [2]: https://renovatebot.com
 [3]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit
 [4]: https://pre-commit.com/
-[5]: https://docs-bootc-org-fedora-bootc-6570d042ee03afe91a435802a9746be5039.gitlab.io/fedora-bootc/building-containers/
-[6]: https://docs-bootc-org-fedora-bootc-6570d042ee03afe91a435802a9746be5039.gitlab.io/fedora-bootc/building-custom-base/
+[5]: https://docs.fedoraproject.org/en-US/bootc/building-containers/
+[6]: https://docs.fedoraproject.org/en-US/bootc/building-custom-base/
