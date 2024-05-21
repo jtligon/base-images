@@ -2,46 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>platform-engineering-org/.github"
-  ],
-  "customDatasources": {
-    "c9s-compose": {
-      "defaultRegistryUrlTemplate": "https://composes.stream.centos.org/production/",
-      "format": "html"
-    }
-  },
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": [
-        "c9s.repo",
-        "centos-bootc-config.json"
-      ],
-      "matchStrings": [
-        "https://composes.stream.centos.org/production/(?<currentValue>.*)/compose/(.*)",
-        "\"redhat.compose-id\": \"(?<currentValue>.*)\""
-      ],
-      "datasourceTemplate": "custom.c9s-compose",
-      "depNameTemplate": "CentOS-Stream-9",
-      "versioningTemplate": "regex:^CentOS-Stream-9-(?<major>\\d{8})\\.d\\.0$"
-    }
-  ],
-  "packageRules": [
-    {
-      "matchDatasources": [
-        "custom.c9s-compose"
-      ],
-      "extractVersion": "(?<version>.+)/$",
-      "automerge": true,
-      "schedule": [
-        "at any time"
-      ],
-      "groupName": null
-    },
-    {
-      "matchPackageNames": [
-        "quay.io/centos-bootc/bootc-image-builder"
-      ],
-      "pinDigests": false
-    }
   ]
 }
