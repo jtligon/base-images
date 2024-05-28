@@ -1,10 +1,9 @@
-releasever: 40
+releasever: rawhide
 variables:
   distro: "fedora"
 
 repos:
-  - fedora
-  - updates
+  - rawhide
 
 metadata:
   name: fedora-boot-tier1

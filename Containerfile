@@ -23,8 +23,7 @@
 # Because it's generating a base image and uses containerbuildcontextization features itself.
 # In the future some of this can be lifted.
 
-# renovate: datasource=endoflife-date depName=fedora versioning=docker
-FROM quay.io/fedora/fedora:40 as repos
+FROM quay.io/fedora/fedora:rawhide as repos
 
 FROM quay.io/centos-bootc/bootc-image-builder:latest as builder
 ARG MANIFEST=fedora-bootc.yaml
