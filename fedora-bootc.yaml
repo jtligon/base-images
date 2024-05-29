@@ -1,7 +1,4 @@
 releasever: rawhide
-variables:
-  distro: "fedora"
-
 repos:
   - rawhide
 
@@ -10,5 +7,6 @@ metadata:
   summary: Fedora Bootable Tier 1
 
 include:
+  - fedora-generic.yaml
   - tier-1/manifest.yaml
   - tier-1/kernel.yaml
