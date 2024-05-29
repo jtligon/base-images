@@ -50,6 +50,7 @@ remove-from-packages:
 
 include:
   - bootc.yaml
+  - bootupd.yaml
   - ostree.yaml
   - initramfs.yaml
   - autoupdates.yaml
@@ -65,8 +66,3 @@ packages:
   - container-selinux
   # Needed for tpm2 bound luks
   - tpm2-tools
-
-# See https://github.com/coreos/bootupd
-arch-include:
-  x86_64: bootupd.yaml
-  aarch64: bootupd.yaml
