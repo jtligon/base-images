@@ -1,6 +1,6 @@
-releasever: rawhide
+releasever: 41
 repos:
-  - rawhide
+  - fedora
 
 metadata:
   name: fedora-boot-tier1
