@@ -1,6 +1,8 @@
 # These are packages that are related to configuring parts of the system.
 
 packages:
+  # Explicit dep for RHEL >= 10
+  - crypto-policies-scripts
   # Configuring SSH keys, cloud provider check-in, etc
   # TODO: needs Ignition kargs
   # - afterburn afterburn-dracut
