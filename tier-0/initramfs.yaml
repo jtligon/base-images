@@ -14,5 +14,5 @@ postprocess:
     EOF
     cat > /usr/lib/dracut/dracut.conf.d/49-bootc-tpm2-tss.conf << 'EOF'
     # We want this for systemd-cryptsetup tpm2 locking
-    add_dracutmodules+=" tpm2-tss "
+    add_dracutmodules+=" systemd-cryptsetup tpm2-tss "
     EOF
