@@ -2,8 +2,8 @@
 packages:
  - systemd
  - bootc
- # Required by bootc install today, though we'll likely switch bootc to use a Rust crate instead of sgdisk
- - gdisk xfsprogs e2fsprogs dosfstools
+ # Required by bootc install
+ - xfsprogs e2fsprogs dosfstools
 
 exclude-packages:
   # Exclude kernel-debug-core to make sure that it doesn't somehow get
