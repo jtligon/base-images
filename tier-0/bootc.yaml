@@ -6,8 +6,9 @@ packages:
  # `iptables`. Currently that pulls in iptables-legacy. Let's explicitly name
  # iptables-nft instead to satisfy it.
  - iptables-nft
- # Required by bootc install today, though we'll likely switch bootc to use a Rust crate instead of sgdisk
- - gdisk xfsprogs e2fsprogs dosfstools
+ # Required by bootc install, sgdisk has been replaced by Rust crate
+ # in bootc https://github.com/containers/bootc/pull/775
+ - xfsprogs e2fsprogs dosfstools
 
 exclude-packages:
   # Exclude kernel-debug-core to make sure that it doesn't somehow get
