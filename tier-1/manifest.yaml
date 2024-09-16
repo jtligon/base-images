@@ -2,7 +2,7 @@
 recommends: true
 
 include:
-  - manifest-tier-0.yaml
+  - ../tier-0/manifest.yaml
   - bootable-rpm-ostree.yaml
   - podman.yaml
   - firmware.yaml
