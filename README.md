@@ -28,6 +28,25 @@ See the `Containerfile` for more details.
 You are of course also free to fork, customize, and build base images yourself.
 See this page[6] of the documentation for more information.
 
+## Tiers
+
+There are currently 3 tiers:
+- **tier-0**: This image is more of a convenient centralization point for CI
+  and curation around a package set that we can all agree is the rough minimum
+  necessary for a usable system. It's not meant to be used as is, but layered
+  upon.
+- **tier-1**: This image is much larger and notably includes networking and
+  firmwares. It's a good starting point onto which you can do less
+  customizations to get what you need.
+- **tier-x**: This image is not intended for end-users. It's the shared base
+  used by all image-based Fedora variants (IoT, Atomic Desktops, and CoreOS).
+  Changes to this tier may be done without accounting for external users.
+
+Both **tier-1** and **tier-x** inherit from **tier-0**.
+
+All non-trivial changes to **tier-0** and **tier-x** should be ACKed by at least
+one stakeholder of each Fedora variant WGs.
+
 ## More information
 
 Documentation: <https://docs.fedoraproject.org/en-US/bootc/>
