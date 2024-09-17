@@ -1,0 +1,12 @@
+releasever: rawhide
+repos:
+  - rawhide
+
+metadata:
+  name: fedora-boot-tier-x
+  summary: Fedora Bootable Tier X
+
+include:
+  - fedora-generic.yaml
+  - tier-x/manifest.yaml
+  - tier-x/kernel.yaml
