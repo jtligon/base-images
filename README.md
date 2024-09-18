@@ -42,7 +42,7 @@ There are currently 3 tiers:
   used by all image-based Fedora variants (IoT, Atomic Desktops, and CoreOS).
   Changes to this tier may be done without accounting for external users.
 
-Both **tier-1** and **tier-x** inherit from **tier-0**.
+**tier-1** inherits from **tier-x** and **tier-x** in turn inherit from **tier-0**.
 
 All non-trivial changes to **tier-0** and **tier-x** should be ACKed by at least
 one stakeholder of each Fedora variant WGs.
