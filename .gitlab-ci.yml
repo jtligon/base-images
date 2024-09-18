@@ -4,8 +4,11 @@ include:
 
 build-image:
   extends: .build-image
+  parallel:
+    matrix:
+      - TIER: [tier-0, tier-1, tier-x]
   variables:
-    EXTRA_ARGS: "--security-opt=label=disable --cap-add=all"
+    EXTRA_ARGS: "--security-opt=label=disable --cap-add=all --build-arg MANIFEST=fedora-$TIER.yaml"
   rules:
     - if: $CI_PROJECT_NAMESPACE != "fedora/bootc"
       when: never
