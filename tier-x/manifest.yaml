@@ -20,16 +20,11 @@ packages:
   # zram-generator (but not zram-generator-defaults) for F33 change
   # https://github.com/coreos/fedora-coreos-tracker/issues/509
   - zram-generator
-  # Some host applications(i.e. NetworkManager) use dnsmasq
-  # as the binary for some various utility operations.
-  # https://github.com/coreos/fedora-coreos-tracker/issues/519
-  - dnsmasq
   # networking
   - iptables-nft
   - NetworkManager
   - openssh-clients
   - openssh-server
-  - slirp4netns # rootless podman networking
   - systemd-resolved
   # linux-firmware now a recommends so let's explicitly include it
   # https://gitlab.com/cki-project/kernel-ark/-/commit/32271d0cd9bd52d386eb35497c4876a8f041f70b
