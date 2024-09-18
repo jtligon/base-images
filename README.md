@@ -9,21 +9,30 @@ been extremely successful. This project aims to apply the same technique for
 bootable host systems - using standard OCI/Docker containers as a transport and
 delivery format for base operating system updates.
 
-## Building
+## Building images
 
-First, the expectation is that most users will want to build *layered* images
-on top of the official base images. See the documentation[5] for more info.
+The current default user experience is to build *layered* images on top of the official
+binary base images produced and tested by this project. See the documentation[5] for more info.
 
-Building the images in this repo can be done with `podman build` as with any
-other application image (note that building with `docker` is not currently
-supported). You need to enable some privileges for technical reasons.
+You can build custom base images by forking this repository; however,
+https://gitlab.com/fedora/bootc/tracker/-/issues/32 tracks a more supportable
+mechanism that is not simply forking. For more information see[6].
+
+## Build process
+
+Building the images in this repo can be done with `podman build`, but
+note the build process uses a special podman-ecosystem specific mechanism
+to create fully custom images while inside a `Containerfile`.
+You need to enable some privileges as nested containerization is required.
 
 ```
 podman build --security-opt=label=disable --cap-add=all \
   --device /dev/fuse -t localhost/fedora-bootc .
 ```
 
-See the `Containerfile` for more details.
+See the `Containerfile` for more details. This builds the default `tier-1` image.
+
+### Deriving
 
 You are of course also free to fork, customize, and build base images yourself.
 See this page[6] of the documentation for more information.
@@ -31,16 +40,17 @@ See this page[6] of the documentation for more information.
 ## Tiers
 
 There are currently 3 tiers:
+- **tier-1**: This image is the default, what is published as
+  https://quay.io/repository/fedora/fedora-bootc
 - **tier-0**: This image is more of a convenient centralization point for CI
   and curation around a package set that we can all agree is the rough minimum
   necessary for a usable system. It's not meant to be used as is, but layered
   upon.
-- **tier-1**: This image is much larger and notably includes networking and
-  firmwares. It's a good starting point onto which you can do less
-  customizations to get what you need.
 - **tier-x**: This image is not intended for end-users. It's the shared base
   used by all image-based Fedora variants (IoT, Atomic Desktops, and CoreOS).
   Changes to this tier may be done without accounting for external users.
+  To build this, pass `--build-arg=MANIFEST=fedora-tier-x.yaml` to the build
+  command above.
 
 **tier-1** inherits from **tier-x** and **tier-x** in turn inherit from **tier-0**.
 
