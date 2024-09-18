@@ -2,7 +2,7 @@
 recommends: true
 
 include:
-  - ../tier-0/manifest.yaml
+  - ../tier-x/manifest.yaml
   - autoupdates.yaml
   - bootable-rpm-ostree.yaml
   - podman.yaml
