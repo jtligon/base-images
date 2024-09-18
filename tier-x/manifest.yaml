@@ -38,4 +38,5 @@ packages:
   # rpm-ostree
   - rpm-ostree nss-altfiles
   # firmware updates
+  # If you're using linux-firmware, you probably also want fwupd
   - fwupd

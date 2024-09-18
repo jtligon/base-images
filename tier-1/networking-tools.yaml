@@ -3,8 +3,6 @@
 # generic enough to be shared downstream with RHCOS.
 
 packages:
-  # Standard tools for configuring network/hostname
-  - NetworkManager hostname
   # Interactive Networking configuration during coreos-install
   - NetworkManager-tui
   # Support for cloud quirks and dynamic config in real rootfs:
