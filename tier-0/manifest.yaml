@@ -53,6 +53,8 @@ include:
   - basic-fixes.yaml
 
 packages:
+  # this is implied by dependencies but let's make it explicit
+  - coreutils
   # needed for building derived container images
   - dnf5
   # Even in tier-0, we have this.  If you don't want SELinux today, you'll need
