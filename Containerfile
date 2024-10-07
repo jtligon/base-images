@@ -20,12 +20,14 @@
 #
 # # Why does this build process require additional privileges?
 #
-# Because it's generating a base image and uses containerbuildcontextization features itself.
+# Because it's generating a base image and uses containerization features itself.
 # In the future some of this can be lifted.
 
 FROM quay.io/fedora/eln:latest as repos
 
-FROM quay.io/centos-bootc/bootc-image-builder:latest as builder
+# BOOTSTRAPPING: This can be any image that has rpm-ostree and selinux-policy-targeted.
+FROM quay.io/fedora/fedora:41 as builder
+RUN dnf -y install rpm-ostree selinux-policy-targeted
 ARG MANIFEST=fedora-bootc.yaml
 COPY --from=repos /etc/dnf/vars /etc/dnf/vars
 COPY --from=repos /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-* /etc/pki/rpm-gpg
