@@ -23,7 +23,7 @@
 # Because it's generating a base image and uses containerbuildcontextization features itself.
 # In the future some of this can be lifted.
 
-FROM quay.io/fedora/fedora:rawhide as repos
+FROM quay.io/fedora/eln:latest as repos
 
 FROM quay.io/centos-bootc/bootc-image-builder:latest as builder
 ARG MANIFEST=fedora-bootc.yaml
